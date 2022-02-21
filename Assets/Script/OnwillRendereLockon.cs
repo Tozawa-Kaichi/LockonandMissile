@@ -22,7 +22,14 @@ public class OnwillRendereLockon : MonoBehaviour
     }
 
     private void OnWillRenderObject()
-    {
-        _canlockOn = true;
+    {//これでメインカメラでだけ判定いけんじゃね？
+        if(Camera.current.tag==_mainCameraTagName)
+        {
+            _canlockOn = true;
+        }
+        {
+            _canlockOn = false;
+        }
+        
     }
 }
